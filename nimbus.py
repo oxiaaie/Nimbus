@@ -3,7 +3,7 @@
 import praw
 
 r = praw.Reddit(user_agent='grabbing posts from favorite subreddits by user /u/Wh04m3y3')
-submissions = r.get_subreddit('netsec').get_new(limit=5)
+submissions = r.get_subreddit('netsec+pwned').get_new(limit=25)
 for submission in submissions:
     print "--------------------------------------------"
     print "Title: ", submission.title
