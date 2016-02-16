@@ -18,5 +18,5 @@ if (args.limit):
         print
         print submission.selftext
 else:
-    print args
+    print "use --help for usage "
 
