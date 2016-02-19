@@ -2,6 +2,7 @@
 
 import praw
 import argparse
+import colorama
 
 
 def arguments():
@@ -29,13 +30,13 @@ def bot():
     r = praw.Reddit(user_agent="grabbing posts from favorite subreddits by user /u/Wh04m3y3")
     submissions = r.get_subreddit(args.sub_reddit).get_new(limit=args.limit_posts)
     for submission in submissions:
-        print "--------------------------------------------"
-        print "Title: ", submission.title
-        print "Link to Reddit: ", submission.permalink
+        print (colorama.Fore.GREEN + "--------------------------------------------")
+        print (colorama.Fore.CYAN + "Title: "), submission.title
+        print (colorama.Fore.MAGENTA + "Link to Reddit: "), submission.permalink
         print "External Url: ", submission.url
         print
-        print submission.selftext
-
+        print (colorama.Fore.BLUE), submission.selftext
+        print (colorama.Style.RESET_ALL + " ")
 
 if __name__ == '__main__':
     bot()
