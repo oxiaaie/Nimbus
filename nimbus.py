@@ -40,9 +40,7 @@ def bot():
 
 if __name__ == '__main__':
     try:
-        args.sub_reddit == True
         bot()
         arguments()
-
-    except:
+    except praw.errors.Forbidden:
         print "Subreddit do not Exists. Here some you can use : \npython , unixporn , itsaunixsystem"
