@@ -39,6 +39,10 @@ def bot():
         print (colorama.Style.RESET_ALL + " ")
 
 if __name__ == '__main__':
-    bot()
-    arguments()
- 
+    try:
+        args.sub_reddit == True
+        bot()
+        arguments()
+
+    except:
+        print "Subreddit do not Exists"
