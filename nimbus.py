@@ -18,8 +18,8 @@ def arguments():
                         type=str,
                         default="netsec+pwned",
                         help='Define the subreddit you want to pull the posts from')
-    args = parser.parse_args()
-    return args
+    arg_x = parser.parse_args()
+    return arg_x
 
 args = arguments()
 
