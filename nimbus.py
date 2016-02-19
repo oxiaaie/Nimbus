@@ -11,19 +11,15 @@ def arguments():
                         type=int,
 #                       default=1,
                         help="Define number to limit posts")
-#   parser.add_argument("-s",
-#                       "--sub-reddit",
-#                       dest='sub_reddit',
-#                       type=string,
-#                       default=netsec,
-#                       help='Define the subreddit you want to pull the posts from')
+
     args = parser.parse_args()
     return args
 
 SUB_REDDIT = "netsec+pwned"
+USER_AGENT = "grabbing posts from favorite subreddits by user /u/Wh04m3y3"
 
 def main():
-    r = praw.Reddit(user_agent="grabbing posts from favorite subreddits by user /u/Wh04m3y3")
+    r = praw.Reddit(user_agent=USER_AGENT)
     submissions = r.get_subreddit(SUB_REDDIT).get_new(limit=args.limit_posts)
     for submission in submissions:
         print "--------------------------------------------"
