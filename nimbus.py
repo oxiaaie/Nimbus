@@ -45,4 +45,4 @@ if __name__ == '__main__':
         arguments()
 
     except:
-        print "Subreddit do not Exists"
+        print "Subreddit do not Exists. Here some you can use : \npython , unixporn , itsaunixsystem"
