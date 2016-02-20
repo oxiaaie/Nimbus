@@ -35,10 +35,15 @@ def bot(args):
         print (colorama.Fore.BLUE), submission.selftext
         print (colorama.Style.RESET_ALL + " ")
 
-if __name__ == '__main__':
+
+def main():
     try:
         bot(arguments())
     except praw.errors.Forbidden:
         print "Subreddit do not Exists. Here some you can use :\npython , unixporn , itsaunixsystem"
     except UnicodeDecodeError:
         print "Error"
+
+
+if __name__ == '__main__':
+    main()
