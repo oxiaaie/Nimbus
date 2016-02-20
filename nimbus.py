@@ -22,10 +22,8 @@ def arguments():
     arg_x = parser.parse_args()
     return arg_x
 
-args = arguments()
 
-
-def bot():
+def bot(args):
 
     r = praw.Reddit(user_agent="grabbing posts from favorite subreddits by user /u/Wh04m3y3")
     submissions = r.get_subreddit(args.sub_reddit).get_new(limit=args.limit_posts) 
@@ -40,7 +38,8 @@ def bot():
 
 if __name__ == '__main__':
     try:
-        bot()
-        arguments()
+        bot(arguments())
     except praw.errors.Forbidden:
         print "Subreddit do not Exists. Here some you can use : \npython , unixporn , itsaunixsystem"
+    except UnicodeDecodeError:
+        print "Error"
