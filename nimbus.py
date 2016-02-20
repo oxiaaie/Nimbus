@@ -24,7 +24,6 @@ def arguments():
 
 
 def bot(args):
-
     r = praw.Reddit(user_agent="grabbing posts from favorite subreddits by user /u/Wh04m3y3")
     submissions = r.get_subreddit(args.sub_reddit).get_new(limit=args.limit_posts) 
     for submission in submissions:
@@ -40,6 +39,6 @@ if __name__ == '__main__':
     try:
         bot(arguments())
     except praw.errors.Forbidden:
-        print "Subreddit do not Exists. Here some you can use : \npython , unixporn , itsaunixsystem"
+        print "Subreddit do not Exists. Here some you can use :\npython , unixporn , itsaunixsystem"
     except UnicodeDecodeError:
         print "Error"
